@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tense Master - Learn Verb Tenses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎯</span>
+        <h1>Tense Master</h1>
+      </div>
+
+      <!-- Mode Tabs -->
+      <nav class="main-tabs">
+        <button class="tab-btn active" data-tab="chart">
+          <span>📊</span>
+          <span>Formula Chart</span>
+        </button>
+        <button class="tab-btn" data-tab="drill">
+          <span>🏋️</span>
+          <span>Drill Practice</span>
+        </button>
+        <button class="tab-btn" data-tab="test">
+          <span>✏️</span>
+          <span>Test Yourself</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ==================== CHART TAB ==================== -->
+    <section class="tab-content active" id="chart-tab">
+      <div class="chart-intro">
+        <h2>📚 Tense Formula Chart</h2>
+        <p>Study these patterns until you can recall them without looking!</p>
+      </div>
+
+      <!-- Present Simple -->
+      <div class="tense-chart" style="--tense-color: #4CAF50;">
+        <div class="chart-header">
+          <span class="chart-icon">🌱</span>
+          <h3>Present Simple</h3>
+          <span class="chart-use">habits, facts, routines</span>
+        </div>
+        <div class="chart-body">
+          <table class="formula-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Formula</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="positive-row">
+                <td><span class="form-tag positive">+ Positive</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I/You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + s/es</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>play</b> football.</div>
+                  <div class="example">He <b>plays</b> football.</div>
+                </td>
+              </tr>
+              <tr class="negative-row">
+                <td><span class="form-tag negative">− Negative</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I/You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">don't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">doesn't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>don't play</b> football.</div>
+                  <div class="example">He <b>doesn't play</b> football.</div>
+                </td>
+              </tr>
+              <tr class="question-row">
+                <td><span class="form-tag question">? Question</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-aux">Do</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">I/you/we/they</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb</span>
+                    <span class="f-q">?</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-aux">Does</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">he/she/it</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb</span>
+                    <span class="f-q">?</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example"><b>Do</b> you <b>play</b> football?</div>
+                  <div class="example"><b>Does</b> he <b>play</b> football?</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Present Continuous -->
+      <div class="tense-chart" style="--tense-color: #2196F3;">
+        <div class="chart-header">
+          <span class="chart-icon">🔄</span>
+          <h3>Present Continuous</h3>
+          <span class="chart-use">happening now, temporary</span>
+        </div>
+        <div class="chart-body">
+          <table class="formula-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Formula</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="positive-row">
+                <td><span class="form-tag positive">+ Positive</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">am</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">is</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">are</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>am playing</b> now.</div>
+                  <div class="example">He <b>is playing</b> now.</div>
+                  <div class="example">They <b>are playing</b> now.</div>
+                </td>
+              </tr>
+              <tr class="negative-row">
+                <td><span class="form-tag negative">− Negative</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">am not</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">isn't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">aren't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>am not playing</b>.</div>
+                  <div class="example">He <b>isn't playing</b>.</div>
+                  <div class="example">They <b>aren't playing</b>.</div>
+                </td>
+              </tr>
+              <tr class="question-row">
+                <td><span class="form-tag question">? Question</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-aux">Am</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">I</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                    <span class="f-q">?</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-aux">Is</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">he/she/it</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                    <span class="f-q">?</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-aux">Are</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">you/we/they</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                    <span class="f-q">?</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example"><b>Am</b> I <b>playing</b>?</div>
+                  <div class="example"><b>Is</b> he <b>playing</b>?</div>
+                  <div class="example"><b>Are</b> they <b>playing</b>?</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Past Simple -->
+      <div class="tense-chart" style="--tense-color: #FF9800;">
+        <div class="chart-header">
+          <span class="chart-icon">⏪</span>
+          <h3>Past Simple</h3>
+          <span class="chart-use">completed actions in past</span>
+        </div>
+        <div class="chart-body">
+          <table class="formula-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Formula</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="positive-row">
+                <td><span class="form-tag positive">+ Positive</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">All subjects</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb-ed / past form</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>played</b> yesterday.</div>
+                  <div class="example">He <b>went</b> home.</div>
+                </td>
+              </tr>
+              <tr class="negative-row">
+                <td><span class="form-tag negative">− Negative</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">All subjects</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">didn't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb (base)</span>
+                  </div>
+                  <div class="formula-note">⚠️ Use base verb, NOT past form!</div>
+                </td>
+                <td>
+                  <div class="example">I <b>didn't play</b>. ✓</div>
+                  <div class="example wrong">I didn't played. ✗</div>
+                </td>
+              </tr>
+              <tr class="question-row">
+                <td><span class="form-tag question">? Question</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-aux">Did</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">subject</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb (base)</span>
+                    <span class="f-q">?</span>
+                  </div>
+                  <div class="formula-note">⚠️ Use base verb, NOT past form!</div>
+                </td>
+                <td>
+                  <div class="example"><b>Did</b> you <b>play</b>? ✓</div>
+                  <div class="example wrong">Did you played? ✗</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Past Continuous -->
+      <div class="tense-chart" style="--tense-color: #9C27B0;">
+        <div class="chart-header">
+          <span class="chart-icon">⏳</span>
+          <h3>Past Continuous</h3>
+          <span class="chart-use">action in progress in past</span>
+        </div>
+        <div class="chart-body">
+          <table class="formula-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Formula</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="positive-row">
+                <td><span class="form-tag positive">+ Positive</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I/He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">was</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">were</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>was playing</b> at 8pm.</div>
+                  <div class="example">They <b>were playing</b>.</div>
+                </td>
+              </tr>
+              <tr class="negative-row">
+                <td><span class="form-tag negative">− Negative</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-subject">I/He/She/It</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">wasn't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-subject">You/We/They</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-aux">weren't</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example">I <b>wasn't playing</b>.</div>
+                  <div class="example">They <b>weren't playing</b>.</div>
+                </td>
+              </tr>
+              <tr class="question-row">
+                <td><span class="form-tag question">? Question</span></td>
+                <td>
+                  <div class="formula">
+                    <span class="f-aux">Was</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">I/he/she/it</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                    <span class="f-q">?</span>
+                  </div>
+                  <div class="formula">
+                    <span class="f-aux">Were</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-subject">you/we/they</span>
+                    <span class="f-plus">+</span>
+                    <span class="f-verb">verb + ing</span>
+                    <span class="f-q">?</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="example"><b>Was</b> he <b>playing</b>?</div>
+                  <div class="example"><b>Were</b> they <b>playing</b>?</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Quick Memory Tips -->
+      <div class="memory-tips">
+        <h3>💡 Memory Tips</h3>
+        <div class="tip-cards">
+          <div class="tip-card">
+            <div class="tip-title">Present Simple</div>
+            <div class="tip-content">
+              <b>He/She/It</b> = add <b>-s</b><br>
+              Questions/Negatives = <b>do/does</b> + base verb
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-title">Continuous = be + ing</div>
+            <div class="tip-content">
+              am/is/are + verb<b>ing</b> (present)<br>
+              was/were + verb<b>ing</b> (past)
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-title">Past Simple Trap!</div>
+            <div class="tip-content">
+              ❌ Did you <s>played</s>?<br>
+              ✅ Did you <b>play</b>?<br>
+              <small>didn't/did = base verb only!</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DRILL TAB ==================== -->
+    <section class="tab-content" id="drill-tab">
+      <div class="drill-intro">
+        <h2>🏋️ Drill Practice</h2>
+        <p>Build sentences step by step. No guessing - just practice the pattern!</p>
+      </div>
+
+      <!-- Drill Settings -->
+      <div class="drill-settings">
+        <div class="setting-group">
+          <label>Tense:</label>
+          <select id="drill-tense">
+            <option value="presentSimple">Present Simple</option>
+            <option value="presentContinuous">Present Continuous</option>
+            <option value="pastSimple">Past Simple</option>
+            <option value="pastContinuous">Past Continuous</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label>Form:</label>
+          <select id="drill-form">
+            <option value="positive">Positive (+)</option>
+            <option value="negative">Negative (−)</option>
+            <option value="question">Question (?)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Formula Display -->
+      <div class="drill-formula-box" id="drill-formula-box">
+        <div class="formula-title">Formula:</div>
+        <div class="formula-display" id="drill-formula">
+          Subject + verb (+ s/es for he/she/it)
+        </div>
+      </div>
+
+      <!-- Drill Card -->
+      <div class="drill-card">
+        <div class="drill-prompt">
+          <div class="prompt-label">Build this sentence:</div>
+          <div class="prompt-parts">
+            <span class="prompt-subject" id="drill-subject">He</span>
+            <span class="prompt-verb" id="drill-verb">play</span>
+            <span class="prompt-extra" id="drill-extra">every day</span>
+          </div>
+        </div>
+
+        <!-- Building Area -->
+        <div class="build-area">
+          <div class="build-label">Your sentence:</div>
+          <div class="build-slots" id="build-slots">
+            <!-- Slots will be generated by JS -->
+          </div>
+        </div>
+
+        <!-- Word Bank -->
+        <div class="word-bank">
+          <div class="bank-label">Click to build:</div>
+          <div class="word-options" id="word-options">
+            <!-- Options will be generated by JS -->
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="drill-result" id="drill-result">
+          <div class="result-sentence" id="result-sentence"></div>
+          <div class="result-feedback" id="result-feedback"></div>
+        </div>
+
+        <!-- Drill Actions -->
+        <div class="drill-actions">
+          <button class="btn btn-secondary" id="drill-clear">
+            <span>🔄</span>
+            <span>Clear</span>
+          </button>
+          <button class="btn btn-primary" id="drill-check">
+            <span>Check</span>
+            <span>✓</span>
+          </button>
+          <button class="btn btn-primary" id="drill-next" style="display: none;">
+            <span>Next</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drill Progress -->
+      <div class="drill-progress">
+        <div class="progress-label">Practice Count: <span id="drill-count">0</span></div>
+      </div>
+    </section>
+
+    <!-- ==================== TEST TAB ==================== -->
+    <section class="tab-content" id="test-tab">
+      <div class="test-intro">
+        <h2>✏️ Test Yourself</h2>
+        <p>Ready to test? Type the correct form!</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar test-stats">
+        <div class="stat-item">
+          <span class="stat-icon">✅</span>
+          <span class="stat-label">Correct</span>
+          <span class="stat-value" id="correct-count">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🔥</span>
+          <span class="stat-label">Streak</span>
+          <span class="stat-value" id="streak-count">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">📊</span>
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="score-count">0</span>
+        </div>
+      </div>
+
+      <!-- Tense Filter -->
+      <div class="tense-filter">
+        <div class="filter-buttons" id="test-filter">
+          <button class="filter-btn active" data-tense="all">All</button>
+          <button class="filter-btn" data-tense="presentSimple">
+            <span class="tense-dot" style="background: #4CAF50"></span>
+            Present Simple
+          </button>
+          <button class="filter-btn" data-tense="presentContinuous">
+            <span class="tense-dot" style="background: #2196F3"></span>
+            Present Cont.
+          </button>
+          <button class="filter-btn" data-tense="pastSimple">
+            <span class="tense-dot" style="background: #FF9800"></span>
+            Past Simple
+          </button>
+          <button class="filter-btn" data-tense="pastContinuous">
+            <span class="tense-dot" style="background: #9C27B0"></span>
+            Past Cont.
+          </button>
+        </div>
+      </div>
+
+      <!-- Test Card -->
+      <div class="game-card">
+        <div class="tense-badge" id="test-tense-badge">
+          <span class="tense-icon">🌱</span>
+          <span class="tense-name">Present Simple</span>
+        </div>
+        <span class="form-badge" id="test-form-badge">Positive</span>
+
+        <div class="question-area">
+          <div class="sentence" id="test-sentence">
+            <span class="subject">He</span>
+            <span class="blank-wrapper">
+              <input type="text" class="blank-input" id="test-input" placeholder="?" autocomplete="off">
+            </span>
+            <span class="rest">football every day.</span>
+          </div>
+          <div class="verb-hint">
+            <span class="hint-label">Verb:</span>
+            <span class="hint-verb" id="test-verb-hint">play</span>
+          </div>
+        </div>
+
+        <div class="answer-feedback" id="test-feedback">
+          <div class="feedback-icon">✓</div>
+          <div class="feedback-text">
+            <span class="feedback-label">Correct answer:</span>
+            <span class="feedback-answer" id="test-correct-answer">plays</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" id="test-check">
+            <span>Check</span>
+            <span class="btn-icon">✓</span>
+          </button>
+          <button class="btn btn-secondary" id="test-next" style="display: none;">
+            <span>Next</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievement Popup -->
+    <div class="achievement-popup" id="achievement">
+      <div class="achievement-content">
+        <span class="achievement-icon">🎉</span>
+        <span class="achievement-text">Great job!</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="verbs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
