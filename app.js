@@ -149,6 +149,11 @@ class TenseMaster {
     document.getElementById('drill-check').addEventListener('click', () => this.checkDrill());
     document.getElementById('drill-next').addEventListener('click', () => this.nextDrill());
 
+    // Drill input - check on every input
+    document.getElementById('drill-input').addEventListener('input', (e) => {
+      this.checkDrillInput();
+    });
+
     // Test filter
     document.querySelectorAll('#test-filter .filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -225,12 +230,12 @@ class TenseMaster {
     document.getElementById('drill-verb').textContent = verb.base;
     document.getElementById('drill-extra').textContent = form === 'question' ? timeExp + '?' : timeExp;
 
-    // Generate word options
-    this.generateWordOptions();
-
-    // Clear build area
-    this.builtSentence = [];
-    this.updateBuildSlots();
+    // Clear input
+    const input = document.getElementById('drill-input');
+    input.value = '';
+    input.className = 'drill-input';
+    input.disabled = false;
+    input.focus();
 
     // Reset result
     document.getElementById('drill-result').classList.remove('show', 'correct', 'incorrect');
@@ -325,97 +330,53 @@ class TenseMaster {
     return { parts, sentence };
   }
 
-  generateWordOptions() {
-    const { correctParts, verb, subject, subjectType } = this.currentDrill;
-    const isThirdSingular = subjectType === 'thirdSingular';
-    const isFirstSingular = subjectType === 'firstSingular';
-
-    // Start with correct parts
-    const options = [...correctParts];
-
-    // Add distractors
-    const distractors = [
-      verb.base,
-      verb.thirdPerson,
-      verb.ing,
-      verb.pastSimple,
-      'do', 'does', "don't", "doesn't",
-      'am', 'is', 'are', "isn't", "aren't", "am not",
-      'was', 'were', "wasn't", "weren't",
-      'did', "didn't",
-      'Do', 'Does', 'Am', 'Is', 'Are', 'Was', 'Were', 'Did',
-      subject, subject.toLowerCase()
-    ];
-
-    distractors.forEach(d => {
-      if (!options.includes(d) && options.length < 10) {
-        options.push(d);
-      }
-    });
-
-    // Shuffle
-    const shuffled = options.sort(() => Math.random() - 0.5);
-
-    // Render
-    const container = document.getElementById('word-options');
-    container.innerHTML = '';
-    shuffled.forEach(word => {
-      const btn = document.createElement('button');
-      btn.className = 'word-option';
-      btn.textContent = word;
-      btn.addEventListener('click', () => this.addWordToSentence(word, btn));
-      container.appendChild(btn);
-    });
-  }
-
-  addWordToSentence(word, btn) {
-    if (btn.classList.contains('used')) return;
-    btn.classList.add('used');
-    this.builtSentence.push(word);
-    this.updateBuildSlots();
-  }
-
-  removeWordFromSentence(index) {
-    const word = this.builtSentence[index];
-    this.builtSentence.splice(index, 1);
-    this.updateBuildSlots();
-
-    // Re-enable word option
-    document.querySelectorAll('.word-option').forEach(btn => {
-      if (btn.textContent === word && btn.classList.contains('used')) {
-        btn.classList.remove('used');
-      }
-    });
-  }
-
-  updateBuildSlots() {
-    const container = document.getElementById('build-slots');
-    container.innerHTML = '';
-
-    if (this.builtSentence.length === 0) {
-      container.innerHTML = '<span class="build-placeholder">Click words below to build your sentence...</span>';
-    } else {
-      this.builtSentence.forEach((word, i) => {
-        const slot = document.createElement('span');
-        slot.className = 'build-slot';
-        slot.textContent = word;
-        slot.addEventListener('click', () => this.removeWordFromSentence(i));
-        container.appendChild(slot);
-      });
-    }
-  }
-
   clearDrill() {
-    this.builtSentence = [];
-    this.updateBuildSlots();
-    document.querySelectorAll('.word-option').forEach(btn => btn.classList.remove('used'));
+    const input = document.getElementById('drill-input');
+    input.value = '';
+    input.className = 'drill-input';
+    input.disabled = false;
+    input.focus();
     document.getElementById('drill-result').classList.remove('show', 'correct', 'incorrect');
   }
 
+  checkDrillInput() {
+    const input = document.getElementById('drill-input');
+    const userAnswer = input.value.trim();
+    const correctAnswer = this.currentDrill.correctSentence;
+
+    // Check if correct (case insensitive)
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      input.classList.add('correct');
+      input.disabled = true;
+
+      const result = document.getElementById('drill-result');
+      const resultSentence = document.getElementById('result-sentence');
+      const resultFeedback = document.getElementById('result-feedback');
+
+      result.classList.remove('incorrect');
+      result.classList.add('show', 'correct');
+      resultSentence.textContent = '✓ ' + userAnswer;
+      resultFeedback.textContent = 'Perfect!';
+
+      this.drillCount++;
+      document.getElementById('drill-count').textContent = this.drillCount;
+      this.playCorrectSound();
+
+      // Auto-move to next after 600ms
+      setTimeout(() => {
+        this.generateDrill();
+      }, 600);
+    }
+  }
+
   checkDrill() {
-    const userSentence = this.builtSentence.join(' ');
-    const correctSentence = this.currentDrill.correctSentence;
-    const isCorrect = userSentence.toLowerCase() === correctSentence.toLowerCase();
+    const input = document.getElementById('drill-input');
+    const userAnswer = input.value.trim();
+    const correctAnswer = this.currentDrill.correctSentence;
+    const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+
+    input.classList.add(isCorrect ? 'correct' : 'incorrect');
+    input.disabled = true;
 
     const result = document.getElementById('drill-result');
     const resultSentence = document.getElementById('result-sentence');
@@ -425,19 +386,19 @@ class TenseMaster {
     result.classList.add('show', isCorrect ? 'correct' : 'incorrect');
 
     if (isCorrect) {
-      resultSentence.textContent = '✓ ' + userSentence;
+      resultSentence.textContent = '✓ ' + userAnswer;
       resultFeedback.textContent = 'Perfect!';
       this.drillCount++;
       document.getElementById('drill-count').textContent = this.drillCount;
       this.playCorrectSound();
 
-      // Auto-move to next after 800ms
+      // Auto-move to next after 600ms
       setTimeout(() => {
         this.generateDrill();
-      }, 800);
+      }, 600);
     } else {
-      resultSentence.textContent = '✗ ' + userSentence;
-      resultFeedback.textContent = 'Correct: ' + correctSentence;
+      resultSentence.textContent = '✗ ' + userAnswer;
+      resultFeedback.textContent = 'Correct: ' + correctAnswer;
       this.playWrongSound();
 
       // Show next button only when wrong
